@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7e8e5"><meta name="description" content="A little scrapbook made with love, for us.">
+  <title>A Little Space for Us ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="topline"><span>MADE WITH ALL MY HEART</span><span class="tiny-heart">♡</span><span>JUST FOR YOU, KYLE</span></div>
+  <main class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="#cover" aria-label="Go to cover"><span class="brand-stamp">♡</span><span>A little space <i>for us</i></span></a>
+      <div class="header-actions"><button class="icon-button" id="openContents" type="button" aria-label="Open table of contents">☰</button></div>
+    </header>
+
+    <section class="cover-screen screen active" id="cover">
+      <div class="cover-orbit orbit-a"></div><div class="cover-orbit orbit-b"></div>
+      <div class="cover-sticker sticker-top">a keepsake<br>of us <span>✿</span></div>
+      <div class="cover-book">
+        <div class="book-spine"></div><div class="book-seam"></div>
+        <div class="cover-sprig sprig-left">✿</div><div class="cover-sprig sprig-right">❀</div>
+        <p class="cover-kicker">A VERY LITTLE LOVE LETTER</p>
+        <div class="cover-title">A little space<br><em>for us.</em></div>
+        <div class="cover-heart">♡</div>
+        <p class="cover-dedication">for Kyle, my favorite person</p>
+        <div class="cover-date">OUR NEXT CHAPTER STARTS HERE</div>
+      </div>
+      <div class="cover-note note-left"><span class="tape"></span>take your time,<br>my love.</div>
+      <div class="cover-note note-right"><span class="tape"></span>one page at<br>a time ♡</div>
+      <button class="primary-button open-book" id="openBook" type="button">Open this, my love <span>↗</span></button>
+      <p class="cover-hint">best opened slowly · made just for you</p>
+    </section>
+
+    <section class="reading-screen screen" id="reader">
+      <div class="reading-top"><div><p class="eyebrow" id="chapterEyebrow">A NOTE FROM ME</p><h1 id="pageHeading">Before you turn the page</h1></div><div class="page-count"><span id="pageNumber">01</span><i>/</i><span id="pageTotal">07</span></div></div>
+      <div class="book-stage" id="bookStage" aria-live="polite">
+        <div class="paper-shadow"></div><article class="paper-page" id="paperPage"><div class="paper-corner corner-one"></div><div class="paper-corner corner-two"></div><div class="paper-content" id="pageContent"></div><div class="page-footer"><span>OUR LITTLE BOOK OF US</span><span id="footerPage">01 ♡</span></div></article>
+        <button class="page-arrow prev-arrow" id="prevPage" type="button" aria-label="Previous page">‹</button><button class="page-arrow next-arrow" id="nextPage" type="button" aria-label="Next page">›</button>
+      </div>
+      <div class="reading-bottom"><div class="progress-track"><span id="readingProgress"></span></div><div class="bottom-row"><span id="pageSubtext">a little note, from me to you</span><div class="page-controls"><button id="prevText" type="button" class="text-button">← back</button><button id="nextText" type="button" class="text-button next-text">turn the page →</button></div></div></div>
+    </section>
+
+    <aside class="contents-drawer" id="contentsDrawer" aria-hidden="true"><div class="drawer-head"><div><p class="eyebrow">YOUR LITTLE GUIDE</p><h2>Inside our book</h2></div><button id="closeContents" class="icon-button" type="button" aria-label="Close contents">×</button></div><div id="contentsList" class="contents-list"></div><p class="drawer-note">No rush, okay? You can always come back. ♡</p></aside>
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <footer class="site-footer"><span>little by little, page by page</span><span>♡</span><span>always choose kindness</span></footer>
+  </main>
+  <script src="firebase-config.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

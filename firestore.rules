@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAuthorizedReader() {
+      return request.auth != null
+        && request.auth.token.email == 'brobonicole@gmail.com'
+        && request.auth.token.email_verified == true;
+    }
+    match /responses/{responseId} {
+      // Kyle's anonymous sign-in can write only to his own UID document.
+      allow create, update: if request.auth != null
+        && request.auth.token.firebase.sign_in_provider == 'anonymous'
+        && request.auth.uid == responseId;
+      // Only the verified, explicitly authorized Google account can read responses.
+      allow read: if isAuthorizedReader();
+      allow delete: if isAuthorizedReader();
+    }
+  }
+}
